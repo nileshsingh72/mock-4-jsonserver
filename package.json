@@ -7,7 +7,8 @@
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
-    "start": "node src"
+    "start": "node src",
+    "build": "json-server build"
   },
   "keywords": [],
   "author": "",
