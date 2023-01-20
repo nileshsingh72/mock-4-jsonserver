@@ -1,14 +1,10 @@
-const js = require("json-server");
-const db = require("./db.json");
-const server = js.create();
+const jsonServer = require("json-server"); // importing json-server library
+const server = jsonServer.create();
+const router = jsonServer.router("db.json");
+const middlewares = jsonServer.defaults();
+const port = process.env.PORT || 3001; // you can use any port number here; i chose to use 3001
 
-const router = js.router(db);
-const middlware = js.defaults();
-const port = 8800;
-
-server.use(middlware);
+server.use(middlewares);
 server.use(router);
 
-server.listen(port, () => console.log("running server"));
-
-//commited
+server.listen(port);
